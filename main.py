@@ -1,4 +1,4 @@
-# resets all when code is restarted
+# resets all plots + drone when code is restarted
 clear()
 
 # goal number of produce items
@@ -10,32 +10,21 @@ worldArea = sideLength * sideLength
 
 while True:
 	
+	# math out the ratios for balanced growth
 	plantHay, plantWood, plantCarrots = mathTastic()
 	
 	
-	for i in range(sideLength):
+	for i in range(plantHay):
 		harvest()
-		if(can_harvest()):
-			harvest()
-		if get_ground_type() == Grounds.Grassland:
+		if get_ground_type() == Grounds.Soil:
 			till()
-		plant(Entities.Carrot)
-
 		normMovement()
 	
-	for i in range(get_world_size()):
-		if(can_harvest()):
-			harvest()
-			plant(Entities.Bush)
+	for i in range(plantWood):
+		bushPlant()
 		normMovement()
 	
-	for i in range(get_world_size()):
-		if(can_harvest()):
-			harvest()
-			plant(Entities.Bush)
+	for i in range(plantCarrots):
+		carrotPlant()
 		normMovement()
 	
-	for i in range(get_world_size()):
-		if(can_harvest()):
-			harvest()
-		normMovement()
