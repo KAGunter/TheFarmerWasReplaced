@@ -1,7 +1,12 @@
+clear()
 while True:
 	for i in range(get_world_size()):
+		harvest()
 		if(can_harvest()):
 			harvest()
+		if get_ground_type() == Grounds.Grassland:
+			till()
+		plant(Entities.Carrot)
 		if(i < (get_world_size()-1)):
 			move(North)
 	
