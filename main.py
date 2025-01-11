@@ -15,9 +15,8 @@ while True:
 	
 	
 	for i in range(plantHay):
-		harvest()
-		if get_ground_type() == Grounds.Soil:
-			till()
+		if can_harvest():
+			harvest()
 		normMovement()
 	
 	for i in range(plantWood):

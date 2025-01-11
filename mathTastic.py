@@ -1,10 +1,12 @@
 def mathTastic():
 	
 	# count actual number of items in inventory
+	# prints deficit before every round of planting so it's easier to see when approaching goal
 	totalHay=num_items(Items.Hay)
 	totalWood=num_items(Items.Wood)
 	totalCarrots=num_items(Items.Carrot)
 	generalDeficit=(totalDesired-(totalHay+totalWood+totalCarrots))
+	print(generalDeficit)
 	
 	# calculate how many of each crop should be in next round of planting
 	hayNeed=round(((0.4*totalDesired-totalHay)/generalDeficit) * worldArea)
