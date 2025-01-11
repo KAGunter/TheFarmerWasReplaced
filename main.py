@@ -1,8 +1,18 @@
+# resets all when code is restarted
 clear()
 
+# goal number of produce items
+totalDesired=10000
+
 sideLength = get_world_size()
+worldArea = sideLength * sideLength
+
 
 while True:
+	
+	plantHay, plantWood, plantCarrots = mathTastic()
+	
+	
 	for i in range(sideLength):
 		harvest()
 		if(can_harvest()):
