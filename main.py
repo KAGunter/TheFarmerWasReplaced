@@ -6,7 +6,10 @@ totalDesired=20000
 numPumpkinPlots=1
 
 sideLength = get_world_size()
+halfLength = sideLength/2
 worldArea = sideLength * sideLength
+dronePositionSavedX= 0
+dronePositionSavedY= 0
 
 
 while True:
@@ -29,6 +32,11 @@ while True:
 	for i in range(plantHay):
 		hayPlant()
 		normMovement()
+
+	for i in range(numPumpkinPlots):
+		dronePositionSavedX, dronePositionSavedY = getDronePos()
+		pumpkinPlant()
+		returnToSavedPos(dronePositionSavedX, dronePositionSavedY)
 	
 	
 	for i in range(plantCarrots):

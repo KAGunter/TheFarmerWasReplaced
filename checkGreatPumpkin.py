@@ -6,9 +6,13 @@ def checkGreatPumpkin(checkSideLength):
 		for k in range(checkSideLength):
 			if (get_entity_type()==Entities.Pumpkin) and (can_harvest()):
 				punkinCount+=1
-			move(North)
+			if(get_entity_type()!=Entities.Pumpkin):
+				harvest()
+			if k < checkSideLength-1:
+				move(North)
 		yToZero()
-		move(East)
+		if j < checkSideLength-1:
+			move(East)
 	
 	if punkinCount==totalNeeded:
 		grPumpkHarvest=True

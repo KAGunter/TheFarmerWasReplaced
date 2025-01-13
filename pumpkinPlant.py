@@ -1,6 +1,6 @@
 def pumpkinPlant():
 	returnOrigin()
-	pknSide=round(sideLength/2)
+	pknSide=round(halfLength)+1
 	if checkGreatPumpkin(pknSide):
 		harvest()
 	for j in range(pknSide):
@@ -10,6 +10,8 @@ def pumpkinPlant():
 			if (get_ground_type() == Grounds.Grassland):
 					till()
 			plant(Entities.Pumpkin)
-			move(North)
+			if k < pknSide-1:
+				move(North)
 		yToZero()
-		move(East)
+		if j < pknSide-1:
+			move(East)
