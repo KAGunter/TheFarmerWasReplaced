@@ -2,7 +2,7 @@
 clear()
 
 # goal number of produce items
-totalDesired=10000
+totalDesired=20000
 
 sideLength = get_world_size()
 worldArea = sideLength * sideLength
@@ -14,15 +14,16 @@ while True:
 	plantHay, plantWood, plantCarrots = mathTastic()
 	
 	
-	for i in range(plantHay):
-		harvest()
-		if get_ground_type() == Grounds.Soil:
-			till()
-		normMovement()
 	
 	for i in range(plantWood):
-		bushPlant()
+		treePlant()
 		normMovement()
+		
+		
+	for i in range(plantHay):
+		hayPlant()
+		normMovement()
+	
 	
 	for i in range(plantCarrots):
 		carrotPlant()
