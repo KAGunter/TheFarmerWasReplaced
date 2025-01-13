@@ -1,4 +1,6 @@
 def carrotPlant():
+	while isValuable():
+		normMovement()
 	if(can_harvest()):
 		harvest()
 	else:

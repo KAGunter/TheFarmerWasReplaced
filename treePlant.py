@@ -1,4 +1,6 @@
 def treePlant():
+	while isValuable():
+		normMovement()
 	needsPlanting=1
 	while (needsPlanting==1):
 		xType = ((get_pos_x() + 1) % 2)

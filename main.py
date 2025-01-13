@@ -3,6 +3,7 @@ clear()
 
 # goal number of produce items
 totalDesired=20000
+numPumpkinPlots=1
 
 sideLength = get_world_size()
 worldArea = sideLength * sideLength
@@ -11,11 +12,16 @@ worldArea = sideLength * sideLength
 while True:
 	
 	# math out the ratios for balanced growth
-	plantHay, plantWood, plantCarrots = mathTastic()
+	plantHay, plantWood, plantCarrots, plantPumpkin = mathTastic()
 	
 	
-	# actually do planting 
+	# actually do planting
+	for i in range(numPumpkinPlots):
+		pumpkinPlant()
+		
+		
 	for i in range(plantWood):
+		returnOrigin()
 		treePlant()
 		normMovement()
 		
