@@ -14,7 +14,7 @@ while True:
 	plantHay, plantWood, plantCarrots = mathTastic()
 	
 	
-	
+	# actually do planting 
 	for i in range(plantWood):
 		treePlant()
 		normMovement()
